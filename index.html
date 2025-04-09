@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schools Without Borders - Bringing Education Where Schools Cannot Reach</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global styles */
+        :root {
+            --navy-blue: #1B1E3B;
+            --orange: #F29100;
+            --dark-blue: #115C94;
+            --light-blue: #259ED5;
+            --gray-bg: #f5f5f5;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--navy-blue);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--dark-blue);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--orange);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #d98100;
+        }
+        
+        .btn-secondary {
+            background-color: var(--dark-blue);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #0e4a78;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .nav-links {
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            font-weight: 600;
+            color: var(--navy-blue);
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+        
+        .language-toggle {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .language-toggle i {
+            margin-right: 0.5rem;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Mission section */
+        .mission {
+            padding: 5rem 0;
+            background-color: var(--gray-bg);
+        }
+        
+        .mission-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .mission-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .mission-points {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .mission-points ul li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .mission-points i {
+            color: var(--orange);
+            margin-right: 0.5rem;
+            margin-top: 0.3rem;
+        }
+        
+        /* Impact numbers section */
+        .impact {
+            padding: 5rem 0;
+            background-color: var(--navy-blue);
+            color: white;
+        }
+        
+        .impact h2 {
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+        }
+        
+        .stat-item {
+            margin: 1rem;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--orange);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Programs section */
+        .programs {
+            padding: 5rem 0;
+        }
+        
+        .program-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .program-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .program-card i {
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+        
+        /* CTA section */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .donation-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .donation-option {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 250px;
+        }
+        
+        .donation-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--navy-blue);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--orange);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--orange);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stat-item {
+                min-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Schools Without Borders Logo">
+                    <span>Schools Without Borders</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="work.html">Our Work</a></li>
+                    <li><a href="#">Support Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="language-toggle">
+                    <i class="fas fa-globe"></i>
+                    <span>EN / عربي</span>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-image.jpg') center/cover no-repeat;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Our Children, Our Future</h1>
+                <p>Bringing Education Where Schools Cannot Reach</p>
+                <a href="#" class="btn btn-primary">Support Our Mission</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <h2 class="text-center">Our Mission: Lighting the Future Through Education</h2>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <p>At Schools Without Borders, we envision a world where every child, even amidst war and displacement, has the opportunity to learn, dream, and grow. Our mission is to break the barriers of ignorance and illiteracy by offering innovative, accessible, and sustainable educational programs for children in conflict zones.</p>
+                    <p>Together, we can transform education into a beacon of hope for children in crises, lighting the way to a brighter future.</p>
+                </div>
+                <div class="mission-points">
+                    <ul>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Restore the right to education for all children</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Foster creativity, critical thinking, and resilience</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Build a generation capable of rebuilding their communities</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Provide psychosocial support to children affected by conflict</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Numbers -->
+    <section class="impact">
+        <div class="container">
+            <h2 class="text-center">Our Impact</h2>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">1,500</div>
+                    <div class="stat-desc">Children Reached</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">32</div>
+                    <div class="stat-desc">Educational Centers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10</div>
+                    <div class="stat-desc">Mobile Learning Units</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">28</div>
+                    <div class="stat-desc">Dedicated Teachers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs">
+        <div class="container">
+            <h2 class="text-center">Our Programs</h2>
+            <p class="text-center">Innovative educational solutions for children in conflict zones</p>
+            <div class="program-cards">
+                <div class="program-card">
+                    <i class="fas fa-bus"></i>
+                    <h3>Mobile Schools</h3>
+                    <p>Education reaches children wherever they are, whether in camps or on the road.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Memory Revival</h3>
+                    <p>Small steps helping out-of-school children return to learning with renewed enthusiasm.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-theater-masks"></i>
+                    <h3>Educational Drama</h3>
+                    <p>Theater and arts as tools to unlock children's creativity.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-child"></i>
+                    <h3>Mobile Kindergarten</h3>
+                    <p>The first steps of education in a flexible and engaging environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/children-learning.jpg') center/cover no-repeat;">
+        <div class="container">
+            <h2>Be Part of the Change</h2>
+            <p>Together, we can turn dreams into reality and provide education to children who need it most.</p>
+            <div class="donation-options">
+                <div class="donation-option">
+                    <div class="donation-amount">$50</div>
+                    <p>Provides a school bag for a child</p>
+                </div>
+                <div class="donation-option">
+                    <div class="donation-amount">$100</div>
+                    <p>Funds a child's education for a month</p>
+                </div>
+                <div class="donation-option">
+                    <div class="donation-amount">$250</div>
+                    <p>Equips a mobile classroom</p>
+                </div>
+            </div>
+            <a href="#" class="btn btn-primary">Donate Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Schools Without Borders</h3>
+                    <p>A non-profit organization supporting education and providing services to students affected by wars and conflicts.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="work.html">Our Work</a></li>
+                        <li><a href="#">Support Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@schools-without-borders.org</p>
+                    <p><i class="fas fa-phone"></i> +972 595 041 685</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Schools Without Borders. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
