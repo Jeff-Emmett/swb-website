@@ -51,7 +51,6 @@ let currentLanguage = 'en';
 function toggleLanguage() {
     currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
     
-    // Update the language toggle text
     const langText = document.getElementById('langText');
     if (langText) {
         langText.textContent = currentLanguage === 'en' ? 'EN / عربي' : 'عربي / EN';
@@ -60,15 +59,12 @@ function toggleLanguage() {
     // Update text direction for Arabic, excluding header
     if (currentLanguage === 'ar') {
         document.documentElement.dir = 'rtl';
-        // Add RTL class to main content areas only
         document.querySelectorAll('main, section, footer').forEach(element => {
             element.style.direction = 'rtl';
         });
-        // Keep header LTR
         document.querySelector('header').style.direction = 'ltr';
     } else {
         document.documentElement.dir = 'ltr';
-        // Remove RTL from all elements
         document.querySelectorAll('main, section, footer').forEach(element => {
             element.style.direction = 'ltr';
         });
@@ -82,25 +78,19 @@ function translatePage() {
     
     elements.forEach(element => {
         const key = element.getAttribute('data-translate');
-        
-        // Get translations from all translation files
-        const translations = {
-            ...homeTranslations,
-            ...aboutTranslations,
-            ...workTranslations,
-            ...supportTranslations,
-            ...contactTranslations
-        };
-        
-        // Update text content if translation exists
         if (translations[currentLanguage] && translations[currentLanguage][key]) {
             element.textContent = translations[currentLanguage][key];
         }
     });
 }
 
-// Don't automatically translate on page load
-// document.addEventListener('DOMContentLoaded', translatePage);
-
-// Add click handler to language toggle
-document.querySelector('.language-toggle').addEventListener('click', toggleLanguage); 
+// Remove onclick attribute from HTML and use event listener
+document.addEventListener('DOMContentLoaded', () => {
+    const langToggle = document.querySelector('.language-toggle');
+    if (langToggle) {
+        // Remove existing onclick attribute
+        langToggle.removeAttribute('onclick');
+        // Add click event listener
+        langToggle.addEventListener('click', toggleLanguage);
+    }
+}); 
