@@ -97,6 +97,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
+    direction: ltr !important;
 }
 
 .navbar {
@@ -104,6 +105,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    direction: ltr !important;
 }
 
 .logo {

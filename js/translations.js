@@ -9,6 +9,7 @@ const translations = {
         contact: "Contact",
         
         // Shared elements
+        organizationName: "Schools Without Borders",
         footerAbout: "A non-profit organization supporting education and providing services to students affected by wars and conflicts.",
         quickLinks: "Quick Links",
         contactUs: "Contact Us",
@@ -30,33 +31,48 @@ const translations = {
         contact: "اتصل بنا",
         
         // Shared elements
+        organizationName: "مدارس بلا حدود",
         footerAbout: "منظمة غير ربحية تدعم التعليم وتقدم الخدمات للطلاب المتأثرين بالحروب والنزاعات.",
         quickLinks: "روابط سريعة",
         contactUs: "اتصل بنا",
         copyright: "© 2025 مدارس بلا حدود. جميع الحقوق محفوظة.",
         
-        // Import page-specific translations from your arabic_translations.txt
-        ...homeTranslations.ar,
-        ...aboutTranslations.ar
+        // Import page-specific translations
+        ...homeTranslations?.ar,
+        ...aboutTranslations?.ar,
+        ...workTranslations?.ar,
+        ...supportTranslations?.ar,
+        ...contactTranslations?.ar
     }
 };
 
 let currentLanguage = 'en';
 
 function toggleLanguage() {
-    // Toggle between languages
     currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
     
-    // Update the language toggle text
     const langText = document.getElementById('langText');
     if (langText) {
         langText.textContent = currentLanguage === 'en' ? 'EN / عربي' : 'عربي / EN';
     }
 
-    // Update text direction for Arabic
-    document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
+    // Update text direction for Arabic, excluding header
+    if (currentLanguage === 'ar') {
+        document.documentElement.dir = 'rtl';
+        // Add RTL class to main content areas only
+        document.querySelectorAll('main, section, footer').forEach(element => {
+            element.style.direction = 'rtl';
+        });
+        // Keep header LTR
+        document.querySelector('header').style.direction = 'ltr';
+    } else {
+        document.documentElement.dir = 'ltr';
+        // Remove RTL from all elements
+        document.querySelectorAll('main, section, footer').forEach(element => {
+            element.style.direction = 'ltr';
+        });
+    }
     
-    // Translate all elements with data-translate attribute
     translatePage();
 }
 
