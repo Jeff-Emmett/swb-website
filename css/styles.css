@@ -121,8 +121,21 @@ header {
 
 .logo span {
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-family: 'Arial', sans-serif;
     font-weight: 600;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a:hover {
+    text-decoration: none;
+    color: inherit;
 }
 
 .nav-links {
@@ -1234,4 +1247,78 @@ header.preserve-layout * {
 /* Adjust spacing for content below header */
 main, section:first-of-type {
     margin-top: 70px;
+}
+
+/* Shared donation card styles */
+.donation-option, .donation-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.donation-option:hover, .donation-box:hover {
+    transform: translateY(-5px);
+}
+
+/* CTA section specific styles */
+.cta .donation-options {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.donation-amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--navy-blue);
+    margin-bottom: 1rem;
+}
+
+.donation-option p, .donation-box p {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Add buttons to CTA donation options */
+.donation-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.donation-option::after {
+    content: "Donate Now";
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--navy-blue);
+    color: white;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.donation-option:hover::after {
+    background-color: var(--dark-navy);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cta .donation-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .donation-option, .donation-box {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
 }

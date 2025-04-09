@@ -1,7 +1,7 @@
 const homeTranslations = {
     en: {
         // Hero Section
-        heroTitle: "Our Children<br>Our Future",
+        heroTitle: "Our Children Our Future",
         heroSubtitle: "Bringing Education Where Schools Cannot Reach",
         supportButton: "Support Our Mission",
         
@@ -45,7 +45,7 @@ const homeTranslations = {
     },
     ar: {
         // Hero Section
-        heroTitle: "أطفالنا<br>مستقبلنا",
+        heroTitle: "أطفالنا مستقبلنا",
         heroSubtitle: "نوصل التعليم حيث لا تصل المدارس",
         supportButton: "ادعم مهمتنا",
         
