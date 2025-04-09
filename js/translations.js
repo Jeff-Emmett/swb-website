@@ -51,6 +51,7 @@ let currentLanguage = 'en';
 function toggleLanguage() {
     currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
     
+    // Update the language toggle text
     const langText = document.getElementById('langText');
     if (langText) {
         langText.textContent = currentLanguage === 'en' ? 'EN / عربي' : 'عربي / EN';
