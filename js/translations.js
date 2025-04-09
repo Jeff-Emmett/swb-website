@@ -14,9 +14,12 @@ const translations = {
         contactUs: "Contact Us",
         copyright: "© 2025 Schools Without Borders. All Rights Reserved.",
         
-        // Import page-specific translations from your arabic_translations.txt
-        ...homeTranslations.en,
-        ...aboutTranslations.en
+        // Import page-specific translations
+        ...homeTranslations?.en,
+        ...aboutTranslations?.en,
+        ...workTranslations?.en,
+        ...supportTranslations?.en,
+        ...contactTranslations?.en
     },
     ar: {
         // Navigation
@@ -51,6 +54,18 @@ function toggleLanguage() {
     // Update document direction
     document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
     document.body.classList.toggle('rtl', currentLang === 'ar');
+    
+    // Update all translatable elements
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[currentLang][key]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = translations[currentLang][key];
+            } else {
+                element.innerHTML = translations[currentLang][key];
+            }
+        }
+    });
     
     // Update navigation
     updateNavigation();

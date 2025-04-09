@@ -218,7 +218,7 @@
                     <li><a href="support.html">Support Us</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
-                <div class="language-toggle">
+                <div class="language-toggle" onclick="toggleLanguage()">
                     <i class="fas fa-globe"></i>
                     <span>EN / عربي</span>
                 </div>
@@ -424,40 +424,11 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="js/translations/home-translations.js"></script>
+    <script src="js/translations/about-translations.js"></script>
+    <script src="js/translations/work-translations.js"></script>
+    <script src="js/translations/support-translations.js"></script>
     <script src="js/translations/contact-translations.js"></script>
     <script src="js/translations.js"></script>
-    <script>
-        // FAQ accordion functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Populate FAQ items
-            const faqContainer = document.querySelector('.faq-container');
-            const currentLang = document.documentElement.lang;
-            const faqs = translations[currentLang].faqQuestions;
-            
-            for (let i = 1; i <= 5; i++) {
-                const faqItem = document.createElement('div');
-                faqItem.className = 'faq-item';
-                faqItem.innerHTML = `
-                    <div class="faq-question">
-                        <h3>${faqs['q' + i]}</h3>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>${faqs['a' + i]}</p>
-                    </div>
-                `;
-                faqContainer.appendChild(faqItem);
-            }
-
-            // Add click handlers
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                });
-            });
-        });
-    </script>
 </body>
 </html>

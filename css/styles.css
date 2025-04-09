@@ -90,7 +90,7 @@ ul {
 
 /* Header styles */
 header {
-    background-color: white;
+    background-color: var(--navy-blue);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
@@ -112,9 +112,15 @@ header {
 }
 
 .logo img {
-    height: 60px;
+    height: 120px;
     margin-right: 10px;
     border-radius: 50%;
+}
+
+.logo span {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .nav-links {
@@ -127,7 +133,7 @@ header {
 
 .nav-links a {
     font-weight: 600;
-    color: var(--navy-blue);
+    color: white;
     transition: color 0.3s ease;
 }
 
@@ -140,6 +146,7 @@ header {
     align-items: center;
     font-weight: 600;
     cursor: pointer;
+    color: white;
 }
 
 .language-toggle i {
@@ -799,5 +806,224 @@ textarea.form-control {
     .contact-form-container, 
     .contact-info {
         flex: 100%;
+    }
+}
+
+/* Work page specific styles */
+.achievements {
+    padding: 5rem 0;
+}
+
+.achievements-content {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.achievements-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.stat-box {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--orange);
+    margin-bottom: 1rem;
+}
+
+/* Programs section */
+.programs {
+    padding: 5rem 0;
+    background-color: var(--gray-bg);
+}
+
+.programs-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.program-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.program-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.program-content {
+    padding: 1.5rem;
+}
+
+/* Gallery section */
+.gallery {
+    padding: 5rem 0;
+}
+
+.gallery-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.gallery-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Stories section */
+.stories {
+    padding: 5rem 0;
+}
+
+.stories-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.stories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.story-card {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+}
+
+.story-header {
+    padding: 1.5rem;
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+.story-header h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.story-content {
+    padding: 1.5rem;
+}
+
+.story-quote {
+    padding: 1rem;
+    background-color: rgba(242, 145, 0, 0.1);
+    border-left: 4px solid var(--orange);
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+/* Future aspirations */
+.future-aspirations {
+    padding: 5rem 0;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/future-vision.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+}
+
+.future-aspirations h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.future-aspirations p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+/* Get involved */
+.get-involved {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.get-involved h2 {
+    margin-bottom: 1.5rem;
+}
+
+.get-involved p {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .stat-box {
+        width: 100%;
+    }
+    
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-items {
+        grid-template-columns: 1fr;
     }
 }
