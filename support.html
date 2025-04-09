@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Us - Schools Without Borders</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        /* Support page specific styles */
+        .support-intro {
+            padding: 5rem 0;
+            background-color: var(--gray-bg);
+        }
+        
+        .support-intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .support-options {
+            padding: 5rem 0;
+        }
+        
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .support-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .support-card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .support-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .support-card:hover .support-card-image img {
+            transform: scale(1.05);
+        }
+        
+        .support-card-content {
+            padding: 2rem;
+        }
+        
+        .support-card-content h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+        
+        .support-card-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .donation-options {
+            padding: 5rem 0;
+            background-color: var(--gray-bg);
+        }
+        
+        .donation-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .donation-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .donation-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .donation-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .donation-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+        
+        .donation-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .impact-section {
+            padding: 5rem 0;
+        }
+        
+        .impact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .impact-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .impact-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .impact-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .impact-list {
+            margin-top: 1.5rem;
+        }
+        
+        .impact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .impact-icon {
+            color: var(--orange);
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .testimonials {
+            padding: 5rem 0;
+            background-color: var(--gray-bg);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-quote {
+            margin-bottom: 2rem;
+            font-style: italic;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .testimonial-quote::before {
+            content: '\201C';
+            font-size: 4rem;
+            position: absolute;
+            left: -0.5rem;
+            top: -1.5rem;
+            color: rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .testimonial-author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+        
+        .testimonial-author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .partners {
+            padding: 5rem 0;
+        }
+        
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .partner {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 150px;
+            transition: transform 0.3s ease;
+        }
+        
+        .partner:hover {
+            transform: translateY(-5px);
+        }
+        
+        .partner img {
+            max-width: 100%;
+            max-height: 60px;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-cta {
+            padding: 3rem 0;
+            background-color: var(--dark-blue);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .donation-box {
+                width: 100%;
+            }
+            
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .partners-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Schools Without Borders Logo">
+                    <span>Schools Without Borders</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="work.html">Our Work</a></li>
+                    <li><a href="support.html" class="active">Support Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="language-toggle">
+                    <i class="fas fa-globe"></i>
+                    <span>EN / عربي</span>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/support-banner.jpg') center/cover no-repeat;">
+        <div class="container">
+            <h1>Support Us</h1>
+            <p>Join Us in Making a Difference</p>
+        </div>
+    </section>
+
+    <!-- Support Intro Section -->
+    <section class="support-intro">
+        <div class="container">
+            <div class="support-intro-content">
+                <h2>Ways You Can Help</h2>
+                <p>At Schools Without Borders, we rely on the generous support of individuals, communities, and organizations to continue our vital work. There are many ways you can contribute to our mission of bringing education to children in crisis-affected areas.</p>
+                <p>Your support allows us to maintain our mobile schools, purchase educational materials, provide food for students, and ensure that our teachers and staff are trained and equipped to deliver quality education.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Options Section -->
+    <section class="support-options">
+        <div class="container">
+            <h2 class="text-center">How You Can Contribute</h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-card-image">
+                        <img src="images/volunteer.jpg" alt="Volunteer with Schools Without Borders">
+                    </div>
+                    <div class="support-card-content">
+                        <h3>Volunteer With Us</h3>
+                        <p>Your time and expertise can have a direct impact on the lives of children in Gaza. Whether you're an educator, healthcare worker, or have skills in logistics, administration, or any other field, we welcome volunteers who share our commitment to making a difference.</p>
+                        <p>As a volunteer, you can assist in organizing educational programs, provide psychological support, offer training to teachers, or engage in fundraising activities.</p>
+                        <a href="#" class="btn btn-primary">Become a Volunteer</a>
+                    </div>
+                </div>
+                <div class="support-card">
+                    <div class="support-card-image">
+                        <img src="images/donate.jpg" alt="Donate to Schools Without Borders">
+                    </div>
+                    <div class="support-card-content">
+                        <h3>Donate</h3>
+                        <p>Your financial contributions directly support the children we serve. Donations help us maintain our mobile schools, purchase educational materials, provide food for students, and ensure that our teachers and staff are trained and equipped to deliver quality education.</p>
+                        <p>You can make a one-time donation or set up a monthly contribution to ensure that our programs continue to thrive.</p>
+                        <a href="#" class="btn btn-primary">Make a Donation</a>
+                    </div>
+                </div>
+                <div class="support-card">
+                    <div class="support-card-image">
+                        <img src="images/spread-word.jpg" alt="Spread the word about Schools Without Borders">
+                    </div>
+                    <div class="support-card-content">
+                        <h3>Spread the Word</h3>
+                        <p>One of the simplest ways to support us is to help spread awareness about our mission. Share our story on social media, tell your friends and family about our work, and encourage others to get involved.</p>
+                        <p>The more people who know about our efforts, the more children we can reach with education and hope.</p>
+                        <div class="social-links" style="justify-content: flex-start;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="support-card">
+                    <div class="support-card-image">
+                        <img src="images/partnership.jpg" alt="Partner with Schools Without Borders">
+                    </div>
+                    <div class="support-card-content">
+                        <h3>Partnerships</h3>
+                        <p>If you're part of a company or organization, consider partnering with Schools Without Borders to help us expand our impact. Your support can take the form of sponsorships, donations, or offering resources that directly benefit our programs.</p>
+                        <p>Corporate partnerships allow us to continue creating sustainable solutions for education in crisis areas.</p>
+                        <a href="#" class="btn btn-primary">Become a Partner</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Form Section -->
+    <section class="volunteer-form">
+        <div class="container">
+            <h2 class="text-center">Volunteer Application</h2>
+            <p class="text-center">Fill out this form to join our volunteer team and make a difference.</p>
+            <div class="form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSecXwztebxjt-f6ZGO7S3cAKYfReBDOZkrzj5XXKg6KrDNg8A/viewform" 
+                        width="100%" 
+                        height="800px" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0">
+                    Loading…
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Options Section -->
+    <section class="donation-options">
+        <div class="container">
+            <div class="donation-title">
+                <h2>Make a Donation</h2>
+                <p>Your contribution, no matter the size, can make a significant difference in a child's life.</p>
+            </div>
+            <div class="donation-boxes">
+                <div class="donation-box">
+                    <div class="donation-amount">$10</div>
+                    <p class="donation-description">Provides a school bag with essential supplies for a child</p>
+                    <a href="#" class="btn btn-primary">Donate $10</a>
+                </div>
+                <div class="donation-box">
+                    <div class="donation-amount">$50</div>
+                    <p class="donation-description">Funds educational materials for a classroom of 20 children</p>
+                    <a href="#" class="btn btn-primary">Donate $50</a>
+                </div>
+                <div class="donation-box">
+                    <div class="donation-amount">$100</div>
+                    <p class="donation-description">Supports a child's education for an entire month</p>
+                    <a href="#" class="btn btn-primary">Donate $100</a>
+                </div>
+                <div class="donation-box">
+                    <div class="donation-amount">$250</div>
+                    <p class="donation-description">Helps equip a mobile classroom with learning resources</p>
+                    <a href="#" class="btn btn-primary">Donate $250</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <h2 class="text-center">The Impact of Your Support</h2>
+            <div class="impact-content">
+                <div class="impact-text">
+                    <p>Every contribution to Schools Without Borders directly impacts the lives of children affected by conflict. Your support doesn't just provide education—it offers hope, stability, and the chance for a better future.</p>
+                    <p>When you donate or volunteer with us, you become part of a movement that believes in the power of education to transform lives and rebuild communities.</p>
+                    <div class="impact-list">
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Restore Learning Opportunities</h4>
+                                <p>Your support helps children regain access to education despite challenging circumstances.</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Provide Safe Spaces</h4>
+                                <p>Your contributions create secure environments where children can learn, play, and grow.</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Support Teacher Training</h4>
+                                <p>Your generosity helps us train educators to deliver quality education in crisis situations.</p>
+                            </div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4>Foster Psychological Healing</h4>
+                                <p>Your donation supports programs that address trauma and promote emotional wellbeing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="impact-image">
+                    <img src="images/impact.jpg" alt="Impact of Schools Without Borders">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="text-center">What Our Supporters Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-quote">
+                        <p>Working with Schools Without Borders as a volunteer teacher has been the most rewarding experience of my career. Seeing children light up with excitement to learn, despite their circumstances, reinforces the importance of this mission.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-image">
+                            <img src="images/testimonial-1.jpg" alt="Sarah Ahmed">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Ahmed</h4>
+                            <p>Volunteer Teacher</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">
+                        <p>As a monthly donor, I'm proud to support an organization that brings education to the most vulnerable children. The transparency and dedication shown by the Schools Without Borders team gives me confidence that my contribution is making a real difference.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-image">
+                            <img src="images/testimonial-2.jpg" alt="Mohammed Khalid">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Mohammed Khalid</h4>
+                            <p>Monthly Donor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-quote">
+                        <p>Our company's partnership with Schools Without Borders has been incredibly fulfilling. Their innovative approach to education in crisis situations aligns perfectly with our corporate values, and we've seen firsthand the impact of our support.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-image">
+                            <img src="images/testimonial-3.jpg" alt="Layla Nasir">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Layla Nasir</h4>
+                            <p>Corporate Partner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2>Have Questions About Supporting Us?</h2>
+            <p>If you would like more information about our donation programs, volunteer opportunities, or partnership possibilities, please don't hesitate to reach out. Our team is ready to answer any questions you may have.</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Schools Without Borders</h3>
+                    <p>A non-profit organization supporting education and providing services to students affected by wars and conflicts.</p>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@tiktok.com/@schools_without_borders"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://x.com/Schools_W_B"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/schools.without.borders/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/schools-w-b-b62342311"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="work.html">Our Work</a></li>
+                        <li><a href="support.html">Support Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@swb-project.org</p>
+                    <p><i class="fas fa-phone"></i> +972 111 111 111</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Schools Without Borders. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
