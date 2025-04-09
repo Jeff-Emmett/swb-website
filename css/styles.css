@@ -91,7 +91,7 @@ ul {
 /* Header styles */
 header {
     background-color: var(--navy-blue);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
     left: 0;
@@ -104,7 +104,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     direction: ltr !important;
 }
 
@@ -163,14 +163,14 @@ header {
 
 /* Page banner */
 .page-banner {
-    height: 30vh;
+    height: 40vh;
     min-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .page-banner h1 {
@@ -1229,4 +1229,9 @@ header.preserve-layout * {
     .testimonial-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Adjust spacing for content below header */
+main, section:first-of-type {
+    margin-top: 70px;
 }
