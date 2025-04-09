@@ -122,7 +122,7 @@
         }
         
         .logo img {
-            height: 60px;
+            height: 120px;
             margin-right: 15px;
             border-radius: 50%;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -130,7 +130,7 @@
         
         .logo span {
             color: var(--white);
-            font-size: 1.5rem;
+            font-size: 3rem;
             font-weight: 700;
             font-family: 'Montserrat', sans-serif;
             letter-spacing: 0.5px;
@@ -159,10 +159,12 @@
             align-items: center;
             font-weight: 600;
             cursor: pointer;
+            color: var(--white);
         }
         
         .language-toggle i {
             margin-right: 0.5rem;
+            color: var(--white);
         }
         
         .mobile-menu {
@@ -176,7 +178,10 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1200/800');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
             color: white;
             margin-top: 80px;
         }
@@ -415,6 +420,30 @@
                 min-width: 150px;
             }
         }
+
+        /* Add RTL support */
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .rtl .nav-links li {
+            margin-left: 0;
+            margin-right: 2rem;
+        }
+
+        .rtl .language-toggle i {
+            margin-right: 0;
+            margin-left: 0.5rem;
+        }
+
+        /* Ensure flex items reverse in RTL */
+        .rtl .navbar,
+        .rtl .mission-content,
+        .rtl .program-cards,
+        .rtl .footer-content {
+            flex-direction: row-reverse;
+        }
     </style>
 </head>
 <body>
@@ -433,9 +462,9 @@
                     <li><a href="support.html">Support Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="language-toggle">
+                <div class="language-toggle" onclick="toggleLanguage()">
                     <i class="fas fa-globe"></i>
-                    <span>EN / عربي</span>
+                    <span id="langText">EN / عربي</span>
                 </div>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
@@ -445,10 +474,10 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-image.png') center/cover no-repeat;">
+    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-image.png') center/cover no-repeat fixed;">
         <div class="container">
             <div class="hero-content">
-                <h1>Our Children, Our Future</h1>
+                <h1>Our Children<br>Our Future</h1>
                 <p>Bringing Education Where Schools Cannot Reach</p>
                 <a href="#" class="btn btn-primary">Support Our Mission</a>
             </div>
@@ -601,5 +630,62 @@
             </div>
         </div>
     </footer>
+
+    <!-- Add this just before the closing </body> tag -->
+    <script>
+        // Store translations
+        const translations = {
+            en: {
+                home: "Home",
+                aboutUs: "About Us",
+                ourWork: "Our Work",
+                supportUs: "Support Us",
+                contact: "Contact",
+                heroTitle: "Our Children<br>Our Future",
+                heroSubtitle: "Bringing Education Where Schools Cannot Reach",
+                supportButton: "Support Our Mission",
+                // Add more translations as needed
+            },
+            ar: {
+                home: "الرئيسية",
+                aboutUs: "من نحن",
+                ourWork: "عملنا",
+                supportUs: "ادعمنا",
+                contact: "اتصل بنا",
+                heroTitle: "أطفالنا<br>مستقبلنا",
+                heroSubtitle: "نوصل التعليم حيث لا تصل المدارس",
+                supportButton: "ادعم مهمتنا",
+                // Add more translations as needed
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            
+            // Update language indicator
+            document.getElementById('langText').textContent = 
+                currentLang === 'en' ? 'EN / عربي' : 'عربي / EN';
+
+            // Update document direction
+            document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update navigation links
+            document.querySelector('a[href="index.html"]').textContent = translations[currentLang].home;
+            document.querySelector('a[href="about.html"]').textContent = translations[currentLang].aboutUs;
+            document.querySelector('a[href="work.html"]').textContent = translations[currentLang].ourWork;
+            document.querySelector('a[href="support.html"]').textContent = translations[currentLang].supportUs;
+            document.querySelector('a[href="contact.html"]').textContent = translations[currentLang].contact;
+
+            // Update hero section
+            document.querySelector('.hero h1').innerHTML = translations[currentLang].heroTitle;
+            document.querySelector('.hero p').textContent = translations[currentLang].heroSubtitle;
+            document.querySelector('.hero .btn').textContent = translations[currentLang].supportButton;
+
+            // Add CSS class for RTL styling when in Arabic
+            document.body.classList.toggle('rtl', currentLang === 'ar');
+        }
+    </script>
 </body>
 </html>
