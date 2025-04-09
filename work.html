@@ -5,224 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Work - Schools Without Borders</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <style>
-        /* Global styles */
-        :root {
-            --navy-blue: #1B1E3B;
-            --orange: #F29100;
-            --dark-blue: #115C94;
-            --light-blue: #259ED5;
-            --gray-bg: #f5f5f5;
-            --white: #ffffff;
+        /* Our Work page specific styles */
+        .achievements {
+            padding: 5rem 0;
+            background-color: var(--gray-bg);
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .achievements-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
-        body {
-            line-height: 1.6;
-            color: #333;
+        .stat-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            width: 220px;
+            transition: transform 0.3s ease;
         }
         
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+        .stat-box:hover {
+            transform: translateY(-5px);
         }
         
-        h1, h2, h3, h4 {
+        .stat-number {
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--navy-blue);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-        }
-        
-        p {
+            color: var(--orange);
             margin-bottom: 1rem;
         }
         
-        a {
-            text-decoration: none;
-            color: var(--dark-blue);
-        }
-        
-        ul {
-            list-style: none;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary {
-            background-color: var(--orange);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: #d98100;
-        }
-        
-        .btn-secondary {
-            background-color: var(--dark-blue);
-            color: white;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #0e4a78;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        /* Header styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 60px;
-            margin-right: 10px;
-        }
-        
-        .nav-links {
-            display: flex;
-        }
-        
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        
-        .nav-links a {
-            font-weight: 600;
-            color: var(--navy-blue);
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--orange);
-        }
-        
-        .nav-links a.active {
-            color: var(--orange);
-        }
-        
-        .language-toggle {
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        
-        .language-toggle i {
-            margin-right: 0.5rem;
-        }
-        
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* Page banner */
-        .page-banner {
-            height: 40vh;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/api/placeholder/1200/800') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            margin-top: 80px;
-        }
-        
-        .page-banner h1 {
-            color: white;
-            font-size: 3rem;
-        }
-        
-        /* Achievements section */
-        .achievements {
-            padding: 5rem 0;
-        }
-        
         .achievements-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-        }
-        
-        .achievements-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .achievement-list {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .achievement-item {
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .achievement-icon {
-            color: var(--orange);
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            flex-shrink: 0;
-        }
-        
-        .achievement-content h3 {
-            margin-bottom: 0.3rem;
+            max-width: 800px;
+            margin: 2rem auto 0;
+            text-align: center;
         }
         
         /* Programs section */
         .programs {
             padding: 5rem 0;
-            background-color: var(--gray-bg);
         }
         
         .programs-intro {
@@ -231,34 +59,48 @@
             text-align: center;
         }
         
-        .program-items {
-            display: flex;
-            flex-wrap: wrap;
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
         }
         
-        .program-item {
-            flex: 1;
-            min-width: 350px;
+        .program-card {
+            background-color: white;
             border-radius: 10px;
             overflow: hidden;
-            background-color: white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
-        .program-item:hover {
+        .program-card:hover {
             transform: translateY(-5px);
         }
         
         .program-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .program-image img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .program-card:hover .program-image img {
+            transform: scale(1.05);
         }
         
         .program-content {
-            padding: 2rem;
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .program-content h3 {
@@ -266,261 +108,32 @@
             color: var(--dark-blue);
         }
         
-        /* Location section */
-        .location {
-            padding: 5rem 0;
-        }
-        
-        .location-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .location-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .location-map {
-            flex: 1;
-            min-width: 300px;
-            height: 400px;
-            background-color: var(--gray-bg);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .location-map img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .locations-list {
-            margin-top: 1.5rem;
-        }
-        
-        .locations-list li {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .locations-list i {
-            color: var(--orange);
-            margin-right: 0.5rem;
-        }
-        
-        /* Future section */
-        .future {
-            padding: 5rem 0;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/api/placeholder/1200/800') center/cover no-repeat;
-            color: white;
-        }
-        
-        .future h2 {
-            color: white;
-            margin-bottom: 2rem;
-        }
-        
-        .future-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-        }
-        
-        .future-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .future-goals {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .future-goal {
+        .program-content p {
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: flex-start;
+            flex-grow: 1;
         }
         
-        .future-goal i {
+        .program-link {
+            align-self: flex-start;
+            font-weight: 600;
             color: var(--orange);
-            font-size: 1.2rem;
-            margin-right: 1rem;
-            margin-top: 0.3rem;
+            display: inline-flex;
+            align-items: center;
         }
         
-        /* Support section */
-        .support {
-            padding: 5rem 0;
-            background-color: var(--gray-bg);
-        }
-        
-        .support-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .support-option {
-            flex: 1;
-            min-width: 250px;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
+        .program-link i {
+            margin-left: 0.5rem;
             transition: transform 0.3s ease;
         }
         
-        .support-option:hover {
-            transform: translateY(-5px);
+        .program-link:hover i {
+            transform: translateX(3px);
         }
         
-        .support-option i {
-            font-size: 2.5rem;
-            color: var(--dark-blue);
-            margin-bottom: 1.5rem;
-        }
-        
-        .support-option h3 {
-            margin-bottom: 1rem;
-        }
-        
-        /* Contact form */
-        .contact-form {
-            padding: 5rem 0;
-        }
-        
-        .form-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--light-blue);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .form-select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            background-color: white;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--navy-blue);
-            color: white;
-            padding: 4rem 0 2rem;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .footer-section h3 {
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-links a {
-            color: #ccc;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--orange);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--orange);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-        
-        /* Gallery */
+        /* Gallery section */
         .gallery {
             padding: 5rem 0;
-            background-color: white;
+            background-color: var(--gray-bg);
         }
         
         .gallery-intro {
@@ -552,26 +165,112 @@
             object-fit: cover;
         }
         
+        /* Impact stories */
+        .impact-stories {
+            padding: 5rem 0;
+        }
+        
+        .stories-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+        
+        .stories-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .story-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .story-header {
+            padding: 1.5rem;
+            background-color: var(--dark-blue);
+            color: white;
+        }
+        
+        .story-header h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .story-content {
+            padding: 1.5rem;
+        }
+        
+        .story-quote {
+            padding: 1rem;
+            background-color: rgba(242, 145, 0, 0.1);
+            border-left: 4px solid var(--orange);
+            margin: 1rem 0;
+            font-style: italic;
+        }
+        
+        /* Future aspirations */
+        .future-aspirations {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/future-vision.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+        }
+        
+        .future-aspirations h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .future-aspirations p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Get involved */
+        .get-involved {
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .get-involved h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .get-involved p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
         /* Responsive styles */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .stat-box {
+                width: 100%;
             }
             
-            .mobile-menu {
-                display: block;
+            .program-grid {
+                grid-template-columns: 1fr;
             }
             
-            .page-banner h1 {
-                font-size: 2.5rem;
-            }
-            
-            .program-item {
-                min-width: 100%;
-            }
-            
-            .support-option {
-                min-width: 100%;
+            .gallery-items {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -616,46 +315,223 @@
         <div class="container">
             <h2 class="text-center">What We've Achieved So Far</h2>
             <div class="achievements-content">
-                <div class="achievements-text">
-                    <p>At "Schools Without Borders," we are committed to addressing the educational crises faced by children in Gaza. With innovation, resilience, and a deep commitment to change, we have developed impactful programs that bring education and hope to the most vulnerable while addressing family needs across all sectors to create holistic family support.</p>
-                    <p>Our work focuses on creating safe, engaging learning environments for children whose education has been disrupted by conflict. We believe that even in the most challenging circumstances, education must continue, and children deserve the opportunity to learn, grow, and dream of a better future.</p>
-                    <p>Through our mobile classrooms, field education spaces, and innovative teaching methods, we've been able to reach children in areas where traditional education infrastructure has been damaged or is nonexistent.</p>
+                <p>At Schools Without Borders, we are committed to addressing the educational crises faced by children in Gaza. With innovation, resilience, and a deep commitment to change, we have developed impactful programs that bring education and hope to the most vulnerable while addressing family needs across all sectors to create holistic family support.</p>
+            </div>
+            <div class="achievements-stats">
+                <div class="stat-box">
+                    <div class="stat-number">1,500+</div>
+                    <p>Children reached with educational opportunities</p>
                 </div>
-                <div class="achievement-list">
-                    <div class="achievement-item">
-                        <div class="achievement-icon">
-                            <i class="fas fa-child"></i>
-                        </div>
-                        <div class="achievement-content">
-                            <h3>Reaching over 1,500 children</h3>
-                            <p>We established safe learning spaces for 1,020 children in 32 camps, enabling them to learn, play, and grow.</p>
-                        </div>
+                <div class="stat-box">
+                    <div class="stat-number">32</div>
+                    <p>Camps receiving educational support</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">10</div>
+                    <p>Educational centers established</p>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">28</div>
+                    <p>Dedicated teachers trained</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs">
+        <div class="container">
+            <div class="programs-intro">
+                <h2>Our Innovative Programs</h2>
+                <p>Through creative and adaptive educational solutions, we bring learning opportunities to children even in the most challenging environments.</p>
+            </div>
+            <div class="program-grid">
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/mobile-school.jpg" alt="Mobile Schools Program">
                     </div>
-                    <div class="achievement-item">
-                        <div class="achievement-icon">
-                            <i class="fas fa-school"></i>
-                        </div>
-                        <div class="achievement-content">
-                            <h3>Creating 10 learning hubs</h3>
-                            <p>These centers provide education and psychosocial support to children affected by conflict.</p>
-                        </div>
-                    </div>
-                    <div class="achievement-item">
-                        <div class="achievement-icon">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                        <div class="achievement-content">
-                            <h3>Empowering 28 teachers</h3>
-                            <p>We train educators with the tools and methods needed for effective teaching during crises, making them change leaders.</p>
-                        </div>
-                    </div>
-                    <div class="achievement-item">
-                        <div class="achievement-icon">
-                            <i class="fas fa-hospital"></i>
-                        </div>
-                        <div class="achievement-content">
-                            <h3>Education in hospitals</h3>
-                            <p>For children who are ill, we designed flexible programs to ensure their education continues uninterrupted.</p>
-                        </div>
+                    <div class="program-content">
+                        <h3>Mobile Schools</h3>
+                        <p>Our mobile classrooms bring education directly to children in displacement camps, temporary shelters, and areas where school buildings have been damaged. These adaptable spaces ensure learning continues regardless of circumstances.</p>
                     </div>
                 </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/memory-revival.jpg" alt="Memory Revival Program">
+                    </div>
+                    <div class="program-content">
+                        <h3>Memory Revival</h3>
+                        <p>For children who have missed extended periods of schooling, our Memory Revival program provides targeted interventions to help rebuild academic foundations and restore confidence in previously learned skills.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/educational-drama.jpg" alt="Educational Drama Program">
+                    </div>
+                    <div class="program-content">
+                        <h3>Educational Drama</h3>
+                        <p>Using theater, arts, and creative expression as tools for learning and healing, our Educational Drama program helps children process trauma while developing academic and emotional skills in an engaging way.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/mobile-kindergarten.jpg" alt="Mobile Kindergarten Program">
+                    </div>
+                    <div class="program-content">
+                        <h3>Mobile Kindergarten</h3>
+                        <p>Our early childhood education program brings structured play-based learning to the youngest children affected by conflict, creating nurturing environments for developing foundational skills.</p>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="images/hospital-learning.jpg" alt="Hospital-Based Learning Program">
+                    </div>
+                    <div class="program-content">
+                        <h3>Hospital-Based Learning</h3>
+                        <p>For children receiving medical treatment, our Hospital-Based Learning program brings educational activities directly to bedsides, ensuring hospitalization doesn't interrupt their learning journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-intro">
+                <h2>Our Impact in Pictures</h2>
+                <p>Images that tell the story of our work and the resilience of the children we serve.</p>
+            </div>
+            <div class="gallery-items">
+                <div class="gallery-item">
+                    <img src="images/gallery-1.jpg" alt="Children in a learning circle">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-2.jpg" alt="Mobile classroom in action">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-3.jpg" alt="Teacher with students">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-4.jpg" alt="Art activities with children">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-5.jpg" alt="Outdoor learning space">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-6.jpg" alt="Children reading books">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stories Section -->
+    <section class="impact-stories">
+        <div class="container">
+            <div class="stories-intro">
+                <h2>Stories of Impact</h2>
+                <p>Real stories of children whose lives have been transformed through education</p>
+            </div>
+            <div class="stories-container">
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Amira's Story</h3>
+                        <p>12-year-old girl from Rafah</p>
+                    </div>
+                    <div class="story-content">
+                        <p>After being out of school for over a year, Amira joined our mobile classroom. Initially withdrawn and struggling with basic skills she had previously mastered, she found her confidence through our Memory Revival program.</p>
+                        <div class="story-quote">
+                            "I thought I had forgotten everything. Now I remember not just what I learned before, but I'm learning new things too. I want to be a teacher someday."
+                        </div>
+                        <p>Today, Amira leads creative writing activities for younger children and has become an inspiration to her peers.</p>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Yassin's Story</h3>
+                        <p>9-year-old boy in hospital recovery</p>
+                    </div>
+                    <div class="story-content">
+                        <p>After being injured and spending three months in hospital, Yassin was isolated from his peers and education. Our Hospital-Based Learning program brought not just lessons, but connection and hope to his bedside.</p>
+                        <div class="story-quote">
+                            "The teachers make me forget I'm in hospital. When we have our lessons, I feel like I'm back at school with my friends."
+                        </div>
+                        <p>Upon discharge, Yassin seamlessly transitioned to our mobile classroom, where he continues to thrive academically despite his physical challenges.</p>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-header">
+                        <h3>Leila and Layla's Story</h3>
+                        <p>4-year-old twins in Al-Bureij camp</p>
+                    </div>
+                    <div class="story-content">
+                        <p>Having never experienced formal education, these shy twins joined our Mobile Kindergarten program. Through songs, games, and age-appropriate activities, they've developed early literacy and numeracy skills along with crucial social abilities.</p>
+                        <div class="story-quote">
+                            "My daughters wake up excited every day for 'school time'. Even in our difficult situation, they're learning, playing, and staying children." - Father of Leila and Layla
+                        </div>
+                        <p>Their transformation from hesitant participants to enthusiastic learners demonstrates the power of early childhood education even in crisis settings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Aspirations Section -->
+    <section class="future-aspirations">
+        <div class="container">
+            <h2>Looking to the Future</h2>
+            <p>As we build on our current work, we aim to expand our reach to 5,000 children by 2030, develop sustainable learning models that can be replicated globally, establish permanent learning centers, and enhance our psychosocial support services for children and families affected by conflict.</p>
+            <a href="about.html#vision" class="btn btn-primary">Learn About Our Vision</a>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section class="get-involved">
+        <div class="container">
+            <h2>Be Part of Our Mission</h2>
+            <p>There are many ways you can contribute to bringing education to children in crisis-affected areas. Whether through volunteering, donating, spreading awareness, or forming partnerships, your support makes a difference.</p>
+            <div class="cta-buttons">
+                <a href="support.html" class="btn btn-primary">Support Us</a>
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Schools Without Borders</h3>
+                    <p>A non-profit organization supporting education and providing services to students affected by wars and conflicts.</p>
+                    <div class="social-links">
+                        <a href="https://www.tiktok.com/@tiktok.com/@schools_without_borders"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://x.com/Schools_W_B"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/schools.without.borders/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/schools-w-b-b62342311"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="work.html">Our Work</a></li>
+                        <li><a href="support.html">Support Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> info@schools-without-borders.org</p>
+                    <p><i class="fas fa-phone"></i> +972 595 041 685</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Schools Without Borders. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="js/translations.js"></script> 
+</body>
+</html>

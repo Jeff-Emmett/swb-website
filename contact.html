@@ -230,99 +230,93 @@
     </header>
 
     <!-- Page Banner -->
-    <section class="page-banner" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/contact-banner.jpg') center/cover no-repeat;">
+    <section class="page-banner" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/banner-contact.jpg') center/cover no-repeat;">
         <div class="container">
-            <h1>Contact Us</h1>
-            <p>Get in Touch With Our Team</p>
+            <h1 data-translate="contactTitle">Contact Us</h1>
+            <p data-translate="contactSubtitle">Get in Touch With Our Team</p>
         </div>
     </section>
 
-    <!-- Contact Intro Section -->
+    <!-- Contact Intro -->
     <section class="contact-intro">
         <div class="container">
             <div class="contact-intro-content">
-                <h2>We'd Love to Hear From You</h2>
-                <p>Whether you have questions about our programs, want to volunteer, or are interested in supporting our mission, we're here to help. Feel free to reach out using the contact form below, or through any of our communication channels.</p>
+                <h2 data-translate="introTitle">We'd Love to Hear From You</h2>
+                <p data-translate="introText">Whether you have questions about our programs, want to volunteer, or are interested in supporting our mission, we're here to help.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
             <div class="contact-container">
                 <div class="contact-form-container">
-                    <h2>Send Us a Message</h2>
+                    <h2 data-translate="formTitle">Send Us a Message</h2>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="fullName">Full Name*</label>
-                            <input type="text" id="fullName" name="fullName" class="form-control" required>
+                            <label data-translate="fullName">Full Name*</label>
+                            <input type="text" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="location">Location</label>
-                            <input type="text" id="location" name="location" class="form-control">
+                            <label data-translate="location">Location</label>
+                            <input type="text" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="contactNumber">Contact Number</label>
-                            <input type="tel" id="contactNumber" name="contactNumber" class="form-control">
+                            <label data-translate="contactNumber">Contact Number</label>
+                            <input type="tel" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address*</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <label data-translate="email">Email Address*</label>
+                            <input type="email" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="inquiryType">Inquiry Type*</label>
-                            <select id="inquiryType" name="inquiryType" class="form-select" required>
-                                <option value="">Select an option</option>
-                                <option value="general">General Inquiry</option>
-                                <option value="volunteer">Volunteer Opportunities</option>
-                                <option value="fundraising">Fundraising</option>
-                                <option value="donation">Donation</option>
-                                <option value="partnership">Partnership</option>
-                                <option value="other">Other</option>
+                            <label data-translate="inquiryType">Inquiry Type*</label>
+                            <select class="form-select" required>
+                                <option value="" data-translate="selectOption">Select an option</option>
+                                <option value="general" data-translate="generalInquiry">General Inquiry</option>
+                                <option value="volunteer" data-translate="volunteer">Volunteer Opportunities</option>
+                                <option value="fundraising" data-translate="fundraising">Fundraising</option>
+                                <option value="donation" data-translate="donation">Donation</option>
+                                <option value="partnership" data-translate="partnership">Partnership</option>
+                                <option value="other" data-translate="other">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message*</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
+                            <label data-translate="message">Message*</label>
+                            <textarea class="form-control" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" data-translate="submitButton">Submit</button>
                     </form>
                 </div>
                 <div class="contact-info">
                     <div class="info-card">
-                        <h3>Contact Information</h3>
+                        <h3 data-translate="contactInfo">Contact Information</h3>
                         <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
+                            <i class="fas fa-envelope info-icon"></i>
                             <div>
-                                <h4>Email</h4>
+                                <h4 data-translate="emailLabel">Email</h4>
                                 <p>info@swb-project.org</p>
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
+                            <i class="fas fa-phone info-icon"></i>
                             <div>
-                                <h4>Phone</h4>
+                                <h4 data-translate="phoneLabel">Phone</h4>
                                 <p>+972 111 111 111</p>
                             </div>
                         </div>
                         <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
+                            <i class="fas fa-map-marker-alt info-icon"></i>
                             <div>
-                                <h4>Operating Locations</h4>
-                                <p>Gaza - Rafah, Al-Bureij, Al-Nuseirat, Al-Zawaida, Deir Al-Balah, Khan Younis</p>
+                                <h4 data-translate="locationsLabel">Operating Locations</h4>
+                                <p data-translate="locationsText">Gaza - Rafah, Al-Bureij, Al-Nuseirat, Al-Zawaida, Deir Al-Balah, Khan Younis</p>
                             </div>
                         </div>
                         <div class="social-info">
-                            <h4>Connect With Us</h4>
+                            <h4 data-translate="connectWithUs">Connect With Us</h4>
                             <div class="social-links">
-                                <a href="https://www.tiktok.com/@tiktok.com/@schools_without_borders"><i class="fab fa-tiktok"></i></a>
+                                <a href="https://www.tiktok.com/@schools_without_borders"><i class="fab fa-tiktok"></i></a>
                                 <a href="https://x.com/Schools_W_B"><i class="fab fa-twitter"></i></a>
                                 <a href="https://www.instagram.com/schools.without.borders/"><i class="fab fa-instagram"></i></a>
                                 <a href="https://www.linkedin.com/in/schools-w-b-b62342311"><i class="fab fa-linkedin-in"></i></a>
@@ -330,8 +324,8 @@
                         </div>
                     </div>
                     <div class="info-card">
-                        <h3>Response Time</h3>
-                        <p>We strive to respond to all inquiries within 24-48 hours. For urgent matters, please contact us directly by phone.</p>
+                        <h3 data-translate="responseTime">Response Time</h3>
+                        <p data-translate="responseTimeText">We strive to respond to all inquiries. For urgent matters, please contact us directly by phone.</p>
                     </div>
                 </div>
             </div>
@@ -341,7 +335,7 @@
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <h2 class="text-center">Frequently Asked Questions</h2>
+            <h2 class="text-center" data-translate="faqTitle">Frequently Asked Questions</h2>
             <div class="faq-container">
                 <div class="faq-item active">
                     <div class="faq-question">
@@ -392,32 +386,23 @@
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="map-section">
-        <div class="container">
-            <h2 class="text-center">Our Areas of Operation</h2>
-            <div class="map-container">
-                <img src="images/gaza-map-detailed.jpg" alt="Map showing Schools Without Borders operational areas in Gaza" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Schools Without Borders</h3>
-                    <p>A non-profit organization supporting education and providing services to students affected by wars and conflicts.</p>
+                    <p data-translate="footerAbout">A non-profit organization supporting education and providing services to students affected by wars and conflicts.</p>
                     <div class="social-links">
-                        <a href="https://www.tiktok.com/@tiktok.com/@schools_without_borders"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.tiktok.com/@schools_without_borders"><i class="fab fa-tiktok"></i></a>
                         <a href="https://x.com/Schools_W_B"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.instagram.com/schools.without.borders/"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/schools-w-b-b62342311"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3 data-translate="quickLinks">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
@@ -427,25 +412,47 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Us</h3>
+                    <h3 data-translate="contactUs">Contact Us</h3>
                     <p><i class="fas fa-envelope"></i> info@swb-project.org</p>
                     <p><i class="fas fa-phone"></i> +972 111 111 111</p>
                 </div>
             </div>
-            <div class="copyright">
+            <div class="copyright" data-translate="copyright">
                 &copy; 2025 Schools Without Borders. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for FAQ accordion -->
+    <!-- Scripts -->
+    <script src="js/translations/contact-translations.js"></script>
+    <script src="js/translations.js"></script>
     <script>
+        // FAQ accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
+            // Populate FAQ items
+            const faqContainer = document.querySelector('.faq-container');
+            const currentLang = document.documentElement.lang;
+            const faqs = translations[currentLang].faqQuestions;
             
+            for (let i = 1; i <= 5; i++) {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item';
+                faqItem.innerHTML = `
+                    <div class="faq-question">
+                        <h3>${faqs['q' + i]}</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>${faqs['a' + i]}</p>
+                    </div>
+                `;
+                faqContainer.appendChild(faqItem);
+            }
+
+            // Add click handlers
+            const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
-                
                 question.addEventListener('click', () => {
                     item.classList.toggle('active');
                 });

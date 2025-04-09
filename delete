@@ -1,0 +1,192 @@
+<!-- Add this just before the closing </body> tag -->
+    <script>
+        // Store translations
+        const translations = {
+            en: {
+                // Navigation
+                home: "Home",
+                aboutUs: "About Us",
+                ourWork: "Our Work",
+                supportUs: "Support Us",
+                contact: "Contact",
+                
+                // Hero Section
+                heroTitle: "Our Children<br>Our Future",
+                heroSubtitle: "Bringing Education Where Schools Cannot Reach",
+                supportButton: "Support Our Mission",
+                
+                // Mission Section
+                missionTitle: "Our Mission: Lighting the Future Through Education",
+                missionText1: "At Schools Without Borders, we envision a world where every child, even amidst war and displacement, has the opportunity to learn, dream, and grow. Our mission is to break the barriers of ignorance and illiteracy by offering innovative, accessible, and sustainable educational programs for children in conflict zones.",
+                missionText2: "Together, we can transform education into a beacon of hope for children in crises, lighting the way to a brighter future.",
+                missionPoint1: "Restore the right to education for all children",
+                missionPoint2: "Foster creativity, critical thinking, and resilience",
+                missionPoint3: "Build a generation capable of rebuilding their communities",
+                missionPoint4: "Provide psychosocial support to children affected by conflict",
+                
+                // Impact Section
+                impactTitle: "Our Impact",
+                childrenReached: "Children Reached",
+                educationalCenters: "Educational Centers",
+                mobileLearning: "Mobile Learning Units",
+                dedicatedTeachers: "Dedicated Teachers",
+                
+                // Programs Section
+                programsTitle: "Our Programs",
+                programsSubtitle: "Innovative educational solutions for children in conflict zones",
+                mobileSchools: "Mobile Schools",
+                mobileSchoolsDesc: "Education reaches children wherever they are, whether in camps or on the road.",
+                memoryRevival: "Memory Revival",
+                memoryRevivalDesc: "Small steps helping out-of-school children return to learning with renewed enthusiasm.",
+                educationalDrama: "Educational Drama",
+                educationalDramaDesc: "Theater and arts as tools to unlock children's creativity.",
+                mobileKindergarten: "Mobile Kindergarten",
+                mobileKindergartenDesc: "The first steps of education in a flexible and engaging environment.",
+                
+                // CTA Section
+                ctaTitle: "Be Part of the Change",
+                ctaSubtitle: "Together, we can turn dreams into reality and provide education to children who need it most.",
+                donateButton: "Donate Now",
+                donation1: "Provides a school bag for a child",
+                donation2: "Funds a child's education for a month",
+                donation3: "Equips a mobile classroom",
+                
+                // Footer
+                footerAbout: "A non-profit organization supporting education and providing services to students affected by wars and conflicts.",
+                quickLinks: "Quick Links",
+                contactUs: "Contact Us",
+                copyright: "© 2025 Schools Without Borders. All Rights Reserved."
+            },
+            ar: {
+                // Navigation
+                home: "الرئيسية",
+                aboutUs: "من نحن",
+                ourWork: "عملنا",
+                supportUs: "ادعمنا",
+                contact: "اتصل بنا",
+                
+                // Hero Section
+                heroTitle: "أطفالنا<br>مستقبلنا",
+                heroSubtitle: "نوصل التعليم حيث لا تصل المدارس",
+                supportButton: "ادعم مهمتنا",
+                
+                // Mission Section
+                missionTitle: "مهمتنا: إنارة المستقبل من خلال التعليم",
+                missionText1: "في مدارس بلا حدود، نتطلع إلى عالم يتمتع فيه كل طفل، حتى في خضم الحرب والنزوح، بفرصة التعلم والحلم والنمو. مهمتنا هي كسر حواجز الجهل والأمية من خلال تقديم برامج تعليمية مبتكرة وميسرة ومستدامة للأطفال في مناطق النزاع.",
+                missionText2: "معاً، يمكننا تحويل التعليم إلى منارة أمل للأطفال في الأزمات، تنير الطريق نحو مستقبل أكثر إشراقاً.",
+                missionPoint1: "استعادة حق التعليم لجميع الأطفال",
+                missionPoint2: "تعزيز الإبداع والتفكير النقدي والمرونة",
+                missionPoint3: "بناء جيل قادر على إعادة بناء مجتمعاتهم",
+                missionPoint4: "تقديم الدعم النفسي والاجتماعي للأطفال المتأثرين بالنزاع",
+                
+                // Impact Section
+                impactTitle: "تأثيرنا",
+                childrenReached: "طفل تم الوصول إليهم",
+                educationalCenters: "مركز تعليمي",
+                mobileLearning: "وحدة تعلم متنقلة",
+                dedicatedTeachers: "معلم متفاني",
+                
+                // Programs Section
+                programsTitle: "برامجنا",
+                programsSubtitle: "حلول تعليمية مبتكرة للأطفال في مناطق النزاع",
+                mobileSchools: "المدارس المتنقلة",
+                mobileSchoolsDesc: "يصل التعليم إلى الأطفال أينما كانوا، سواء في المخيمات أو على الطريق.",
+                memoryRevival: "إحياء الذاكرة",
+                memoryRevivalDesc: "خطوات صغيرة تساعد الأطفال خارج المدرسة على العودة إلى التعلم بحماس متجدد.",
+                educationalDrama: "الدراما التعليمية",
+                educationalDramaDesc: "المسرح والفنون كأدوات لإطلاق إبداع الأطفال.",
+                mobileKindergarten: "روضة الأطفال المتنقلة",
+                mobileKindergartenDesc: "الخطوات الأولى للتعليم في بيئة مرنة وجذابة.",
+                
+                // CTA Section
+                ctaTitle: "كن جزءاً من التغيير",
+                ctaSubtitle: "معاً، يمكننا تحويل الأحلام إلى حقيقة وتوفير التعليم للأطفال الأكثر احتياجاً.",
+                donateButton: "تبرع الآن",
+                donation1: "توفير حقيبة مدرسية لطفل",
+                donation2: "تمويل تعليم طفل لمدة شهر",
+                donation3: "تجهيز فصل دراسي متنقل",
+                
+                // Footer
+                footerAbout: "منظمة غير ربحية تدعم التعليم وتقدم الخدمات للطلاب المتأثرين بالحروب والنزاعات.",
+                quickLinks: "روابط سريعة",
+                contactUs: "اتصل بنا",
+                copyright: "© 2025 مدارس بلا حدود. جميع الحقوق محفوظة."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            
+            // Update language indicator
+            document.getElementById('langText').textContent = 
+                currentLang === 'en' ? 'EN / عربي' : 'عربي / EN';
+
+            // Update document direction
+            document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            
+            // Update all text content
+            // Navigation
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                if (link.href.includes('index.html')) link.textContent = translations[currentLang].home;
+                if (link.href.includes('about.html')) link.textContent = translations[currentLang].aboutUs;
+                if (link.href.includes('work.html')) link.textContent = translations[currentLang].ourWork;
+                if (link.href.includes('support.html')) link.textContent = translations[currentLang].supportUs;
+                if (link.href.includes('contact.html')) link.textContent = translations[currentLang].contact;
+            });
+
+            // Hero Section
+            document.querySelector('.hero h1').innerHTML = translations[currentLang].heroTitle;
+            document.querySelector('.hero p').textContent = translations[currentLang].heroSubtitle;
+            document.querySelector('.hero .btn').textContent = translations[currentLang].supportButton;
+
+            // Mission Section
+            document.querySelector('.mission h2').textContent = translations[currentLang].missionTitle;
+            document.querySelectorAll('.mission-text p')[0].textContent = translations[currentLang].missionText1;
+            document.querySelectorAll('.mission-text p')[1].textContent = translations[currentLang].missionText2;
+            document.querySelectorAll('.mission-points li span')[0].textContent = translations[currentLang].missionPoint1;
+            document.querySelectorAll('.mission-points li span')[1].textContent = translations[currentLang].missionPoint2;
+            document.querySelectorAll('.mission-points li span')[2].textContent = translations[currentLang].missionPoint3;
+            document.querySelectorAll('.mission-points li span')[3].textContent = translations[currentLang].missionPoint4;
+
+            // Impact Section
+            document.querySelector('.impact h2').textContent = translations[currentLang].impactTitle;
+            document.querySelectorAll('.stat-desc')[0].textContent = translations[currentLang].childrenReached;
+            document.querySelectorAll('.stat-desc')[1].textContent = translations[currentLang].educationalCenters;
+            document.querySelectorAll('.stat-desc')[2].textContent = translations[currentLang].mobileLearning;
+            document.querySelectorAll('.stat-desc')[3].textContent = translations[currentLang].dedicatedTeachers;
+
+            // Programs Section
+            document.querySelector('.programs h2').textContent = translations[currentLang].programsTitle;
+            document.querySelector('.programs > .container > p').textContent = translations[currentLang].programsSubtitle;
+            
+            const programCards = document.querySelectorAll('.program-card');
+            programCards[0].querySelector('h3').textContent = translations[currentLang].mobileSchools;
+            programCards[0].querySelector('p').textContent = translations[currentLang].mobileSchoolsDesc;
+            programCards[1].querySelector('h3').textContent = translations[currentLang].memoryRevival;
+            programCards[1].querySelector('p').textContent = translations[currentLang].memoryRevivalDesc;
+            programCards[2].querySelector('h3').textContent = translations[currentLang].educationalDrama;
+            programCards[2].querySelector('p').textContent = translations[currentLang].educationalDramaDesc;
+            programCards[3].querySelector('h3').textContent = translations[currentLang].mobileKindergarten;
+            programCards[3].querySelector('p').textContent = translations[currentLang].mobileKindergartenDesc;
+
+            // CTA Section
+            document.querySelector('.cta h2').textContent = translations[currentLang].ctaTitle;
+            document.querySelector('.cta > .container > p').textContent = translations[currentLang].ctaSubtitle;
+            document.querySelectorAll('.donation-option p')[0].textContent = translations[currentLang].donation1;
+            document.querySelectorAll('.donation-option p')[1].textContent = translations[currentLang].donation2;
+            document.querySelectorAll('.donation-option p')[2].textContent = translations[currentLang].donation3;
+            document.querySelector('.cta .btn').textContent = translations[currentLang].donateButton;
+
+            // Footer
+            document.querySelector('.footer-section p').textContent = translations[currentLang].footerAbout;
+            document.querySelectorAll('.footer-section h3')[1].textContent = translations[currentLang].quickLinks;
+            document.querySelectorAll('.footer-section h3')[2].textContent = translations[currentLang].contactUs;
+            document.querySelector('.copyright').textContent = translations[currentLang].copyright;
+
+            // Add CSS class for RTL styling when in Arabic
+            document.body.classList.toggle('rtl', currentLang === 'ar');
+        }
+    </script>
+    
