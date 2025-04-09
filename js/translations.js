@@ -46,10 +46,33 @@ const translations = {
     }
 };
 
-let currentLanguage = 'en';
+// Get stored language or default to 'en'
+let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
+
+// Initialize page with stored language
+document.addEventListener('DOMContentLoaded', () => {
+    // Update language toggle text
+    const langText = document.getElementById('langText');
+    if (langText) {
+        langText.textContent = currentLanguage === 'en' ? 'EN / عربي' : 'عربي / EN';
+    }
+
+    // Set initial direction and translate if not English
+    if (currentLanguage === 'ar') {
+        document.documentElement.dir = 'rtl';
+        document.querySelectorAll('main, section, footer').forEach(element => {
+            element.style.direction = 'rtl';
+        });
+        document.querySelector('header').style.direction = 'ltr';
+        translatePage();
+    }
+});
 
 function toggleLanguage() {
     currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+    
+    // Store language preference
+    localStorage.setItem('selectedLanguage', currentLanguage);
     
     const langText = document.getElementById('langText');
     if (langText) {
