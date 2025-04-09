@@ -19,7 +19,29 @@ const homeTranslations = {
         donation1: "Provides a school bag for a child",
         donation2: "Funds a child's education for a month",
         donation3: "Equips a mobile classroom",
-        donateButton: "Donate Now"
+        donateButton: "Donate Now",
+        
+        // Memory Revival Program
+        memoryRevivalTitle: "Memory Revival",
+        memoryRevivalDesc: "Small steps helping out-of-school children return to learning with renewed enthusiasm.",
+        
+        // Educational Drama Program
+        educationalDramaTitle: "Educational Drama",
+        educationalDramaDesc: "Theater and arts as tools to unlock children's creativity.",
+        
+        // Mobile Kindergarten Program
+        mobileKindergartenTitle: "Mobile Kindergarten",
+        mobileKindergartenDesc: "The first steps of education in a flexible and engaging environment.",
+        
+        // Navigation items
+        home: "Home",
+        aboutUs: "About Us",
+        ourWork: "Our Work",
+        supportUs: "Support Us",
+        contact: "Contact",
+        
+        // Footer
+        footerAbout: "A non-profit organization supporting education and providing services to students affected by wars and conflicts."
     },
     ar: {
         // Hero Section
@@ -41,6 +63,48 @@ const homeTranslations = {
         donation1: "يوفر حقيبة مدرسية لطفل",
         donation2: "يمول تعليم طفل لمدة شهر",
         donation3: "يجهز فصلاً دراسياً متنقلاً",
-        donateButton: "تبرع الآن"
+        donateButton: "تبرع الآن",
+        
+        // New translations
+        organizationName: "مدارس بلا حدود",
+        impactTitle: "تأثيرنا",
+        childrenReached: "طفل تم الوصول إليهم",
+        educationalCenters: "مركز تعليمي",
+        mobileLearningUnits: "وحدة تعليم متنقلة",
+        dedicatedTeachers: "معلم متفانٍ",
+        
+        programsTitle: "برامجنا",
+        programsSubtitle: "حلول تعليمية مبتكرة للأطفال في مناطق النزاع",
+        
+        mobileSchoolsTitle: "المدارس المتنقلة",
+        mobileSchoolsDesc: "التعليم يصل إلى الأطفال أينما كانوا، سواء في المخيمات أو على الطريق",
+        
+        missionPoint4: "تقديم الدعم النفسي والاجتماعي للأطفال المتأثرين بالنزاع",
+        
+        quickLinks: "روابط سريعة",
+        contactUs: "اتصل بنا",
+        copyright: "© 2025 مدارس بلا حدود. جميع الحقوق محفوظة.",
+        
+        // Memory Revival Program
+        memoryRevivalTitle: "إحياء الذاكرة",
+        memoryRevivalDesc: "خطوات صغيرة تساعد الأطفال خارج المدرسة على العودة إلى التعلم بحماس متجدد",
+        
+        // Educational Drama Program
+        educationalDramaTitle: "الدراما التعليمية",
+        educationalDramaDesc: "المسرح والفنون كأدوات لإطلاق إبداع الأطفال",
+        
+        // Mobile Kindergarten Program
+        mobileKindergartenTitle: "روضة الأطفال المتنقلة",
+        mobileKindergartenDesc: "الخطوات الأولى للتعليم في بيئة مرنة وجذابة",
+        
+        // Navigation items
+        home: "الرئيسية",
+        aboutUs: "من نحن",
+        ourWork: "عملنا",
+        supportUs: "ادعمنا",
+        contact: "اتصل بنا",
+        
+        // Footer
+        footerAbout: "منظمة غير ربحية تدعم التعليم وتقدم الخدمات للطلاب المتأثرين بالحروب والنزاعات"
     }
 };

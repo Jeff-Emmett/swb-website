@@ -44,72 +44,58 @@ const translations = {
 let currentLang = localStorage.getItem('language') || 'en';
 
 function toggleLanguage() {
+    // Toggle between English and Arabic
     currentLang = currentLang === 'en' ? 'ar' : 'en';
     localStorage.setItem('language', currentLang);
     
-    // Update language indicator
-    document.querySelector('.language-toggle span').textContent = 
+    // Update the language toggle text
+    document.getElementById('langText').textContent = 
         currentLang === 'en' ? 'EN / عربي' : 'عربي / EN';
     
     // Update document direction
     document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
     document.body.classList.toggle('rtl', currentLang === 'ar');
     
-    // Update all translatable elements
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[currentLang][key]) {
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                element.placeholder = translations[currentLang][key];
+    // Update all translatable content
+    updateContent();
+}
+
+function updateContent() {
+    // Combine all translations for the current language
+    const translations = {
+        ...homeTranslations[currentLang],
+        ...aboutTranslations[currentLang],
+        ...workTranslations[currentLang],
+        ...supportTranslations[currentLang],
+        ...contactTranslations[currentLang]
+    };
+    
+    // Update the content based on your translation structure
+    for (const [key, value] of Object.entries(translations)) {
+        const elements = document.querySelectorAll(`[data-translate="${key}"]`);
+        elements.forEach(element => {
+            // Handle elements that might contain HTML (like <br>)
+            if (value.includes('<br>')) {
+                element.innerHTML = value;
             } else {
-                element.innerHTML = translations[currentLang][key];
+                element.textContent = value;
             }
-        }
-    });
-    
-    // Update navigation
-    updateNavigation();
-    
-    // Update footer
-    updateFooter();
-    
-    // Update page-specific content
-    const pageName = window.location.pathname.split('/').pop().split('.')[0];
-    if (typeof window[`update${capitalize(pageName)}Page`] === 'function') {
-        window[`update${capitalize(pageName)}Page`]();
+        });
     }
-}
-
-function updateNavigation() {
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        if (link.href.includes('index.html')) link.textContent = translations[currentLang].home;
-        if (link.href.includes('about.html')) link.textContent = translations[currentLang].aboutUs;
-        if (link.href.includes('work.html')) link.textContent = translations[currentLang].ourWork;
-        if (link.href.includes('support.html')) link.textContent = translations[currentLang].supportUs;
-        if (link.href.includes('contact.html')) link.textContent = translations[currentLang].contact;
-    });
-}
-
-function updateFooter() {
-    document.querySelector('.footer-section p').textContent = translations[currentLang].footerAbout;
-    document.querySelectorAll('.footer-section h3')[1].textContent = translations[currentLang].quickLinks;
-    document.querySelectorAll('.footer-section h3')[2].textContent = translations[currentLang].contactUs;
-    document.querySelector('.copyright').textContent = translations[currentLang].copyright;
-}
-
-function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
+    // Set initial direction and language
     document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
     document.body.classList.toggle('rtl', currentLang === 'ar');
-    document.querySelector('.language-toggle span').textContent = 
+    
+    // Set initial language toggle text
+    document.getElementById('langText').textContent = 
         currentLang === 'en' ? 'EN / عربي' : 'عربي / EN';
     
-    // Update all content
-    toggleLanguage();
+    // Update initial content
+    updateContent();
 });
 
 // Add click handler to language toggle
