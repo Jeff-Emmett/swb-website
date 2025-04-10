@@ -176,19 +176,25 @@ header {
 
 /* Page banner */
 .page-banner {
-    height: 40vh;
+    height: 40vh;  /* Set to 40% of viewport height */
     min-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 80px;  /* Match header height plus some spacing */
 }
 
 .page-banner h1 {
     color: white;
     font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.page-banner p {
+    font-size: 1.25rem;
+    opacity: 0.9;
 }
 
 /* Hero section */
@@ -294,17 +300,23 @@ footer {
         font-size: 2.5rem;
     }
     
+    .page-banner {
+        height: 30vh;
+        min-height: 200px;
+        margin-top: 60px;  /* Adjusted for smaller header on mobile */
+    }
+    
     .page-banner h1 {
         font-size: 2.5rem;
+    }
+    
+    .page-banner p {
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .page-banner h1 {
         font-size: 2rem;
     }
     
